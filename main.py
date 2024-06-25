@@ -1,13 +1,15 @@
 import openai
 from exa_py import Exa
+import os
 from datetime import datetime, timedelta
 import textwrap
 
 
-EXA_API_KEY = 000 # Exa API Key here
-OPENAI_API_KEY = 000 # OpenAI API Key here
+EXA_API_KEY = os.environ.get('000') # Exa API Key here
+OPENAI_API_KEY = os.environ.get('000') # OpenAI API Key here
 
 openai.api_key = OPENAI_API_KEY
+openai.api_type = "openai"
 exa = Exa(EXA_API_KEY)
 
 SYSTEM_MESSAGE = "You are a helpful assistant that generates search queries based on user questions. Only generate one search query."
